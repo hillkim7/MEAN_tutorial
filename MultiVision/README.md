@@ -22,6 +22,7 @@ git commit -m 'npm init'
  bower install query --save
  bower install toastr --save # client-side notification
  bower install angular angular-resource angular-route --save
+ bower install bootstrap --save
  # Now bower.json file has dependencies.
  vi bower.json
 ```
