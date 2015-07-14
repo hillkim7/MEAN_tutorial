@@ -21,14 +21,16 @@ app.use(stylus.middleware(
     compile: compile
     }
     ));
-  app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));
+
+app.get('/partials/:partialPath', function(req, res) {
+  res.render('partials/' + req.params.partialPath);
+});
 
 app.get('*', function(req, res) {
   res.render('index');
 });
 
-
 var port = 3030;
 app.listen(port);
 console.log('Listening port:', port);
-
