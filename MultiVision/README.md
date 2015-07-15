@@ -12,7 +12,7 @@ npm init
 git add -A
 git commit -m 'npm init'
 ```
-### Step #1: Initial setup for client-side using the bower
+### Step #2: Initial setup for client-side using the bower
 ```bash
  sudo npm install -g bower --save-dev
  mkdir public
@@ -26,5 +26,11 @@ git commit -m 'npm init'
  # Now bower.json file has dependencies.
  vi bower.json
 ```
+
+### Step #2: Mongodb setup
+```bash
+npm install mongoose --save
+```
+
 ## References
 * Video author: https://github.com/joeeames/
