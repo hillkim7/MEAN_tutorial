@@ -27,9 +27,21 @@ git commit -m 'npm init'
  vi bower.json
 ```
 
-### Step #2: Mongodb setup
+### Step #3: Mongodb setup
 ```bash
 npm install mongoose --save
+```
+
+### Step #4: Creating Mongodb data
+```bash
+$ mongo
+> use multivision
+switched to db multivision
+> db.messages.insert({message: 'Hello Mongo'})
+> show collections
+messages
+system.indexes
+>
 ```
 
 ## References
