@@ -43,6 +43,30 @@ messages
 system.indexes
 >
 ```
+### Step #4: Deploying to Heroku
+
+#### Change listening port
+#### Signup Mongolab
+#### Setup mongodb in the mongolab
+- Create 'multivision' database in https://mongolab.com/create
+- Create DB user in https://mongolab.com/databases/multivision150717#users
+- Create data in shell
+```bash
+$  mongo ds047632.mongolab.com:47632/multivision150717 -u <user> -p <password>
+> db.messages.insert({message: 'Hello from MongoLab'})
+> show collections
+messages
+system.indexes
+> 
+```
+#### Modify parameter address in mongoose.connect()
+```js
+if (env == 'development') {
+  mongoose.connect('mongodb://localhost/multivision');
+} else {
+  mongoose.connect('mongodb://multivisionuser:multivisionpw@ds047632.mongolab.com:47632/multivision150717');
+}
+```
 
 ## References
 * Video author: https://github.com/joeeames/
