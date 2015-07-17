@@ -70,18 +70,18 @@ if (env == 'development') {
 
 #### Pushing to Heroku
 ```bash
-$ heroku create  # create heroku app
+$ heroku create multivision1507 --buildpack https://github.com/heroku/heroku-buildpack-nodejs
 $ git remote -v   # show git remotes
 $ heroku apps
 === My Apps
-shielded-garden-2494
-$ heroku config:set NODE_ENV=production --app shielded-garden-2494
-$ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs --app shielded-garden-2494
+multivision1507
+$ heroku config:set NODE_ENV=production --app multivision1507
 $ git push heroku master
-$ heroku ps:scale web=1 --app shielded-garden-2494
+# $ git remote set-url heroku  https://git.heroku.com/multivision1507.git 
+$ heroku ps:scale web=1 --app multivision1507
 
 #### General Heroku Troubleshooting
-$ heroku logs --app shielded-garden-2494
+$ heroku logs --app heroku ps:scale web=1 --app multivision1507
 
 #### Managing Heroku Keys
 $ ssh-keygen

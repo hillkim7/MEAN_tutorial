@@ -13,6 +13,7 @@
   "author": "Hill Kim",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "jade": "^1.11.0",
     "mongoose": "^4.0.7",
