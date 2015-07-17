@@ -43,7 +43,7 @@ messages
 system.indexes
 >
 ```
-### Step #4: Deploying to Heroku
+### Step #5: Deploying to Heroku
 
 #### Change listening port
 #### Signup Mongolab
@@ -67,6 +67,26 @@ if (env == 'development') {
   mongoose.connect('mongodb://multivisionuser:multivisionpw@ds047632.mongolab.com:47632/multivision150717');
 }
 ```
+
+#### Pushing to Heroku
+```bash
+$ heroku create  # create heroku app
+$ git remote -v   # show git remotes
+$ heroku apps
+=== My Apps
+shielded-garden-2494
+$ heroku config:set NODE_ENV=production --app shielded-garden-2494
+$ heroku buildpacks:set https://github.com/heroku/heroku-buildpack-nodejs --app shielded-garden-2494
+$ git push heroku master
+$ heroku ps:scale web=1 --app shielded-garden-2494
+
+#### General Heroku Troubleshooting
+$ heroku logs --app shielded-garden-2494
+
+#### Managing Heroku Keys
+$ ssh-keygen
+$ heroku keys:add
+
 
 ## References
 * Video author: https://github.com/joeeames/
