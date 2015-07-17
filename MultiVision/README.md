@@ -67,7 +67,6 @@ if (env == 'development') {
   mongoose.connect('mongodb://multivisionuser:multivisionpw@ds047632.mongolab.com:47632/multivision150717');
 }
 ```
-
 #### Pushing to Heroku
 ```bash
 $ heroku create multivision1507 --buildpack https://github.com/heroku/heroku-buildpack-nodejs
@@ -77,16 +76,21 @@ $ heroku apps
 multivision1507
 $ heroku config:set NODE_ENV=production --app multivision1507
 $ git push heroku master
-# $ git remote set-url heroku  https://git.heroku.com/multivision1507.git 
+# in case of not deploying well use following command
+# heroku run "bower cache clean && bower install"
 $ heroku ps:scale web=1 --app multivision1507
-
+````
 #### General Heroku Troubleshooting
+```bash
 $ heroku logs --app heroku ps:scale web=1 --app multivision1507
-
+```
 #### Managing Heroku Keys
+```bash
 $ ssh-keygen
 $ heroku keys:add
-
+```
+#### Open deployed web with browser
+http://multivision1507.herokuapp.com/
 
 ## References
 * Video author: https://github.com/joeeames/
