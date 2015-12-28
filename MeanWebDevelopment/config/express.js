@@ -21,5 +21,10 @@ module.exports = function() {
   app.set('view engine', 'ejs');
 
   require('../app/routes/index.server.routes.js')(app);
+
+  // Express comes prebundled with the express.static() middleware, which
+  // provides static files handling.
+  app.use(express.static('./public'));
+  
   return app;
 };
