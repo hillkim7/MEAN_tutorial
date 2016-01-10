@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title><%= title %></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title><%=title%></title>
+
+  <%include ./include/include-src.html%>
+  <script src="cli_controllers/users.client.controller.js"></script>
 </head>
-<body>
-<img src="img/logo.png" alt="Logo">
-<h1><%= title %></h1>
+
+<body ng-app="mApp">
+
+<!-- NAVIGATION -->
+<!-- code reference: https://scotch.io/tutorials/angular-routing-using-ui-router -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="#">AngularUI Router</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="about">About</a></li>
+    </ul>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <div ui-view></div>
+
+</div>
 </body>
 </html>

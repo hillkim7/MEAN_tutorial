@@ -6,6 +6,7 @@ var mongoose = require('./config/mongoose'),
 var db = mongoose();
 var app = express();
 
-app.listen(3000);
+var host = '0.0.0.0';
+app.listen(3000, host);
 module.exports = app;
-console.log('Server running at http://localhost:3000/');
+console.log('Server running at http://' + host + ':3000/');
