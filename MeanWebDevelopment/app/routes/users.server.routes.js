@@ -1,7 +1,13 @@
 var users = require('../../app/controllers/users.server.controller');
 
 module.exports = function(app) {
-  app.route('/api/users')
+    app.get('/users', function (req, res) {
+        res.render('users', {
+            /* param: 'param value here' */
+        });
+    });
+
+    app.route('/api/users')
     .post(users.create)
     .get(users.list);
     
