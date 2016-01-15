@@ -60,6 +60,7 @@ UserSchema.methods.hashPassword = function (password) {
 };
 
 UserSchema.methods.authenticate = function (password) {
+  console.log("user.server.model.js: authenticate password=" + password);
   return this.password === this.hashPassword(password);
 };
 

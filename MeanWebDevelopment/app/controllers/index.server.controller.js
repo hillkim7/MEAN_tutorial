@@ -4,6 +4,7 @@ exports.render = function(req, res) {
   }
   req.session.lastVisit = new Date();
   res.render('index', {
-    title: 'Hello World by View Engine'
+    title: 'Hello World by View Engine',
+    userFullName: req.user ? req.user.fullName : ''
   });
 };
