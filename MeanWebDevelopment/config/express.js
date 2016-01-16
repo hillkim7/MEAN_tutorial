@@ -37,6 +37,7 @@ module.exports = function() {
   app.use(passport.session());
 
   require('../app/routes/index.server.routes.js')(app);
+  require('../app/routes/example.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
 
   // Express comes prebundled with the express.static() middleware, which
