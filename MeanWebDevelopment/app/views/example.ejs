@@ -4,7 +4,7 @@
 <title><%= title %></title>
 </head>
 <body>
-  <% if (userFullName) { %>
+  <% if (user) { %>
   <h2>Hello <%=userFullName%> </h2>
   <a href="/signout">Sign out</a>
   <% } else { %>
@@ -14,11 +14,20 @@
 
   <section ng-view></section>
 
+  <script type="text/javascript">
+    /*
+    To manage AngularJS authentication, it makes the Express application
+    render the user object directly in the EJS view and then use an AngularJS service to wrap the object.
+    */
+    window.user = <%- user || 'null' %>;
+  </script>
   <script type="text/javascript" src="/lib/angular/angular.js"></script>
   <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="/example/example.client.module.js"></script>
   <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
   <script type="text/javascript" src="/example/routes/example.client.routes.js"></script>
+  <script type="text/javascript" src="/users/users.client.module.js"></script>
+  <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
   <script type="text/javascript" src="/application.js"></script>
 
 </body>

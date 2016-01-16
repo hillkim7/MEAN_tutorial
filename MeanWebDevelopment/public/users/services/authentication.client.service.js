@@ -10,3 +10,15 @@ angular.module('users').factory('Authentication', ['$window',
     return auth;
   }
 ]);
+
+// same statement
+/*
+angular.module('users').factory('Authentication', [
+function () {
+  this.user = window.user;
+  return {
+    user: this.user
+  };
+}
+]);
+*/
