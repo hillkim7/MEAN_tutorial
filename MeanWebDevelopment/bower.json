@@ -1,0 +1,21 @@
+{
+  "name": "MEAN",
+  "description": "MEAN Web Developemnt",
+  "main": "",
+  "authors": [
+    "hill <hillkim7@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/hillkim7/MEAN_tutorial",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
