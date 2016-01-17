@@ -11,4 +11,6 @@ module.exports = function(app) {
   .delete(users.requiresLogin, articles.hasAuthorization, articles.delete);
 
   app.param('articleId', articles.articleByID);
+
+  app.get('/articles', articles.render);
 };

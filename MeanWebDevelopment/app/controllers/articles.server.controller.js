@@ -92,4 +92,9 @@ exports.hasAuthorization = function (req, res, next) {
   next();
 };
 
+exports.render = function (req, res) {
+  res.render('articles', {
+    user: JSON.stringify(req.user)
+  });
+};
 
